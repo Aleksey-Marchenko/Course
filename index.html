@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перерождение 2.0</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon.ico">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="body-wrapper">
+    <header class="header">
+      <div class="header__container container">
+        <div class="header__leftside">
+          <a class="header__logo" href="/">
+            <picture>
+              <source srcset="img/logo.webp" type="image/webp">
+              <img src="img/logo.png" alt="">
+            </picture>
+          </a>
+          <p class="header__logo-text _section-subtitle">
+            Авторский 60-дневный <br>
+            тренинг Ивана Лободы
+          </p>
+        </div>
+
+        <div class="header__rightside">
+                    <a href="https://t.me/Ivan_Loboda_blog" target="blank" class="header__telegram">
+                <div class="header__telegram-link">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27px" height="22px">
+            
+                       <path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M10.585,14.489 L10.138,20.625 C10.777,20.625 11.054,20.357 11.386,20.036 L14.381,17.239 L20.587,21.679 C21.725,22.298 22.527,21.972 22.834,20.656 L26.908,2.011 L26.909,2.010 C27.270,0.365 26.301,-0.276 25.192,0.126 L1.246,9.081 C-0.388,9.701 -0.363,10.592 0.968,10.994 L7.090,12.854 L21.310,4.162 C21.980,3.731 22.588,3.970 22.087,4.402 L10.585,14.489 Z"></path>
+                   </svg>
+                        </div>
+    </a>
+          
+          <button class="header__button" data-bs-toggle="modal" data-bs-target="#question">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+              <g>
+                <g>
+                  <path fill="#fff" d="M8.732 14.578a411.68 411.68 0 0 1-2.486 2.488c-.404.4-.91.458-1.332.16-.294-.206-.426-.5-.426-.856v-2.035c-.056-.019-.107-.04-.16-.056-2.082-.54-3.49-2.115-3.794-4.24-.005-.04-.027-.077-.04-.115V4.93c.014-.047.036-.09.043-.139C.827 2.903 1.856 1.574 3.602.82 4.037.63 4.524.563 4.987.438h8.786c.29.064.584.116.87.196a4.979 4.979 0 0 1 3.62 4.75c.011 1.363.012 2.728 0 4.09a4.988 4.988 0 0 1-4.95 4.94c-1.396.012-2.794.005-4.19 0a.496.496 0 0 0-.39.164zm-.13-2.162c1.539.01 3.078.007 4.617.003 1.732-.004 3.046-1.319 3.05-3.05.003-1.289.002-2.58 0-3.868-.003-1.75-1.313-3.063-3.06-3.065-2.554-.002-5.108-.002-7.662 0-1.744.002-3.054 1.318-3.056 3.07-.002 1.281-.001 2.56 0 3.841 0 .158.005.318.03.474.238 1.521 1.412 2.553 2.949 2.6.6.017 1.006.432 1.014 1.036.002.157 0 .315 0 .548.435-.435.826-.817 1.205-1.21.253-.26.547-.38.913-.379zm17.453 1.502v4.592c-.014.04-.036.076-.041.114-.3 2.12-1.716 3.706-3.791 4.24-.054.015-.105.037-.162.06 0 .617-.02 1.226.005 1.832.025.619-.209 1.04-.804 1.244h-.4c-.24-.17-.509-.311-.718-.513-.783-.758-1.55-1.535-2.314-2.31a.537.537 0 0 0-.436-.175c-1.34.006-2.68.003-4.019.003-2.53-.003-4.547-1.66-5.011-4.142-.078-.411-.082-.843-.073-1.265.01-.528.489-.943 1.014-.93.532.015.969.44.968.98 0 .574.036 1.133.303 1.653.558 1.086 1.451 1.677 2.671 1.7 1.556.028 3.112.013 4.668.004.394-.004.706.123.976.407.365.386.746.756 1.173 1.184 0-.233-.003-.401 0-.57.01-.586.42-1 1.008-1.018 1.725-.055 2.982-1.345 2.985-3.068.002-1.157.003-2.314 0-3.47-.004-1.712-1.292-3.017-3.003-3.05-.626-.01-1.057-.431-1.047-1.02.01-.572.455-.976 1.073-.975 2.485.005 4.616 1.877 4.928 4.328.007.057.03.111.047.165zM4.515 5.654a.965.965 0 0 1 .475-1.081c.156-.08.346-.134.521-.134 2.577-.01 5.155-.008 7.732-.006.588.002 1.027.431 1.029.993.001.563-.437 1-1.023 1.002-1.29.005-2.578 0-3.866 0-1.297 0-2.594.005-3.891-.002a.983.983 0 0 1-.977-.772zm4.865 4.77c-1.297 0-2.594.002-3.89-.001a.986.986 0 0 1-.976-.775.965.965 0 0 1 .478-1.081c.156-.08.347-.134.522-.136 2.577-.007 5.154-.007 7.731-.002.588 0 1.026.433 1.027.995 0 .563-.439.996-1.026.999-1.289.003-2.577 0-3.866 0z"></path>
+                </g>
+              </g>
+            </svg>
+           <p class="header__button-row" >Задать вопрос в поддержку</p> 
+    </button>
+ 
+        </div>
+        <div class="header__blob">
+          <img src="img/header-blob.webp" alt="">
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="section-1">
+          <div class="container">
+            <div class="section-1__wrapper">
+              <h1 class="section-1__title">
+                <nobr class="section-1__nobr">“Причина ВСЕГО” <img class="section-1__ellips" src="img/ellips.png" alt=""></nobr>  - это способ<br>
+                узнать, понять и научиться влиять<br>
+                на все события вокруг тебя
+            </h1>
+            <button class="section-1__btn">
+                Получить возможность направить <br>
+                свою жизнь в желаемом направлении
+                <img src="img/almaz.png" alt="">
+            </button>
+            <img class="img-section__1" src="img/ivan_4.png" alt="">
+            </div>
+          </div>
+      </section>
+      <section class="section-2">
+        <div class="section-2__wrapper">
+              <div class="container">
+                
+                  <div class="section-2__inner">
+                      <div class="section-2__row">
+                          <h2 class="section-2__title title-1">Почти каждого посещала хоть раз<br>
+                              одна из подобных мыслей:</h2>
+                              <div class="coursor visible-hand">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" height="42" width="42">
+                                  <rect class="tooltip-horizontal-scroll-icon_card" x="480" width="200" height="200" rx="5" fill="rgba(190,190,190,0.3)"></rect>
+                                  <rect class="tooltip-horizontal-scroll-icon_card" y="0" width="200" height="200" rx="5" fill="rgba(190,190,190,0.3)"></rect>
+                                  <rect class="tooltip-horizontal-scroll-icon_card" x="240" width="200" height="200" rx="5" fill="rgba(190,190,190,0.3)"></rect>
+                                  <path class="tooltip-horizontal-scroll-icon_hand" d="M78.9579 285.7C78.9579 285.7 37.8579 212.5 20.5579 180.8C-2.44209 138.6 -6.2422 120.8 9.6579 112C19.5579 106.5 33.2579 108.8 41.6579 123.4L61.2579 154.6V32.3C61.2579 32.3 60.0579 0 83.0579 0C107.558 0 105.458 32.3 105.458 32.3V91.7C105.458 91.7 118.358 82.4 133.458 86.6C141.158 88.7 150.158 92.4 154.958 104.6C154.958 104.6 185.658 89.7 200.958 121.4C200.958 121.4 236.358 114.4 236.358 151.1C236.358 187.8 192.158 285.7 192.158 285.7H78.9579Z" fill="rgba(190,190,190,1)"></path>
+                                  <style>
+                                    .tooltip-horizontal-scroll-icon_hand {
+                                      animation: tooltip-horizontal-scroll-icon_anim-scroll-hand 2s infinite;
+                                    }
+                    
+                                    .tooltip-horizontal-scroll-icon_card {
+                                      animation: tooltip-horizontal-scroll-icon_anim-scroll-card 2s infinite;
+                                    }
+                    
+                                    @keyframes tooltip-horizontal-scroll-icon_anim-scroll-hand {
+                                      0% {
+                                        transform: translateX(80px) scale(1);
+                                        opacity: 0;
+                                      }
+                    
+                                      10% {
+                                        transform: translateX(80px) scale(1);
+                                        opacity: 1;
+                                      }
+                    
+                                      20%,
+                                      60% {
+                                        transform: translateX(175px) scale(0.6);
+                                        opacity: 1;
+                                      }
+                    
+                                      80% {
+                                        transform: translateX(5px) scale(0.6);
+                                        opacity: 1;
+                                      }
+                    
+                                      to {
+                                        transform: translateX(5px) scale(0.6);
+                                        opacity: 0;
+                                      }
+                                    }
+                    
+                                    @keyframes tooltip-horizontal-scroll-icon_anim-scroll-card {
+                    
+                                      0%,
+                                      60% {
+                                        transform: translateX(0);
+                                      }
+                    
+                                      80%,
+                                      to {
+                                        transform: translateX(-240px);
+                                      }
+                                    }
+                                  </style>
+                                </svg>
+                              </div>
+                      </div>
+                      <div class="section-2__columns">
+                        <div class="section-2__column">
+                          <div class="section-2__img">
+                            <img src="img/1.jpg" alt="">
+                          </div>
+                          <div>
+                            <p class="section-2__subtitle">как же меня <b>всё за***ло</b></p>
+                          </div>
+                        </div>
+
+                          <div class="section-2__column">
+                            <div class="section-2__img">
+                              <img src="img/2.jpg" alt="">
+                            </div>
+                            <div>
+                              <p class="section-2__subtitle"><b>я катастрофически устал</b><br>
+                                от этой ужасно работы</p>
+                            </div>
+                          </div>
+
+                          <div class="section-2__column">
+                            <div class="section-2__img">
+                              <img src="img/3.jpg" alt="">
+                            </div>
+                            <div>
+                              <p class="section-2__subtitle">как <b>мне надоели</b> соседи</p>
+                            </div>
+                          </div>
+                          <div class="section-2__column">
+                            <div class="section-2__img">
+                              <img src="img/4.jpg" alt="">
+                            </div>
+                            <div>
+                              <p class="section-2__subtitle"> <b>я в отчаяние,</b><br>
+                                уже готов выйти в окно</p>
+                            </div>
+                          </div>
+                          <div class="section-2__column">
+                            <div class="section-2__img">
+                              <img src="img/5.jpg" alt="">
+                            </div>
+                            <div>
+                              <p class="section-2__subtitle">как начать жизнь<br>
+                               <b> с чистого листа</b></p>
+                            </div>
+                          </div>
+                          <div class="section-2__column">
+                            <div class="section-2__img">
+                              <img src="img/6.jpg" alt="">
+                            </div>
+                            <div>
+                              <p class="section-2__subtitle"><b>как бросить</b> пить/курить</p>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+                
+              </div>
+            </div>
+      </section>
+      <section class="section-3">
+        <div class="container">
+          <div class="section-3__wrapper">
+            <h2 class=" section-5__title">Кто во всем <nobr class="section-3__nobr">этом виноват?<img class="section-3__ellips" src="img/ellips-2.png" alt=""></nobr></h2>
+            <p class="section-3__subtitle">Единственный человек который за это в ответе – «Я»</p>
+            <div class="coursor visible-hand">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" height="42" width="42">
+                <rect class="tooltip-horizontal-scroll-icon_card" x="480" width="200" height="200" rx="5" fill="rgba(190,190,190,0.3)"></rect>
+                <rect class="tooltip-horizontal-scroll-icon_card" y="0" width="200" height="200" rx="5" fill="rgba(190,190,190,0.3)"></rect>
+                <rect class="tooltip-horizontal-scroll-icon_card" x="240" width="200" height="200" rx="5" fill="rgba(190,190,190,0.3)"></rect>
+                <path class="tooltip-horizontal-scroll-icon_hand" d="M78.9579 285.7C78.9579 285.7 37.8579 212.5 20.5579 180.8C-2.44209 138.6 -6.2422 120.8 9.6579 112C19.5579 106.5 33.2579 108.8 41.6579 123.4L61.2579 154.6V32.3C61.2579 32.3 60.0579 0 83.0579 0C107.558 0 105.458 32.3 105.458 32.3V91.7C105.458 91.7 118.358 82.4 133.458 86.6C141.158 88.7 150.158 92.4 154.958 104.6C154.958 104.6 185.658 89.7 200.958 121.4C200.958 121.4 236.358 114.4 236.358 151.1C236.358 187.8 192.158 285.7 192.158 285.7H78.9579Z" fill="rgba(190,190,190,1)"></path>
+                <style>
+                  .tooltip-horizontal-scroll-icon_hand {
+                    animation: tooltip-horizontal-scroll-icon_anim-scroll-hand 2s infinite;
+                  }
+  
+                  .tooltip-horizontal-scroll-icon_card {
+                    animation: tooltip-horizontal-scroll-icon_anim-scroll-card 2s infinite;
+                  }
+  
+                  @keyframes tooltip-horizontal-scroll-icon_anim-scroll-hand {
+                    0% {
+                      transform: translateX(80px) scale(1);
+                      opacity: 0;
+                    }
+  
+                    10% {
+                      transform: translateX(80px) scale(1);
+                      opacity: 1;
+                    }
+  
+                    20%,
+                    60% {
+                      transform: translateX(175px) scale(0.6);
+                      opacity: 1;
+                    }
+  
+                    80% {
+                      transform: translateX(5px) scale(0.6);
+                      opacity: 1;
+                    }
+  
+                    to {
+                      transform: translateX(5px) scale(0.6);
+                      opacity: 0;
+                    }
+                  }
+  
+                  @keyframes tooltip-horizontal-scroll-icon_anim-scroll-card {
+  
+                    0%,
+                    60% {
+                      transform: translateX(0);
+                    }
+  
+                    80%,
+                    to {
+                      transform: translateX(-240px);
+                    }
+                  }
+                </style>
+              </svg>
+            </div>
+            <div class="section-3__columns">
+              <div class="section-2__column">
+                <div class="section-2__img">
+                  <img src="img/2-1.jpg" alt="">
+                </div>
+                <div>
+                  <p class="section-2__subtitle"><b>это «Я» </b>выбирает плохую работу</p>
+                </div>
+              </div>
+
+                <div class="section-2__column">
+                  <div class="section-2__img">
+                    <img src="img/2-2.jpg" alt="">
+                  </div>
+                  <div>
+                    <p class="section-2__subtitle"><b>это «Я» </b>выбрал плохого<br>
+                      спутника жизни
+                    </p>
+                  </div>
+                </div>
+
+                <div class="section-2__column">
+                  <div class="section-2__img">
+                    <img src="img/2-3.jpg" alt="">
+                  </div>
+                  <div>
+                    <p class="section-2__subtitle"><b> это «Я» </b>допускает<br>
+                      что вы вас обижали</p>
+                  </div>
+                </div>
+            </div>
+            <div class="brain">
+              <p class="brain-paragraph">В каждом из нас есть базовые <br>
+                программы, заложенные с детства,<br>
+                которые влияют на наше поведение,<br>
+                эмоции и мышление, формируя нашу<br>
+                личность и взаимодействие<br>
+                с окружающим миром</p>
+                <img class="brain-img" src="img/brain.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-4">
+        <div class="container">
+          <div class="section-4__inner">
+            <div class="section-4__column">
+              <h3 class="section-4__title"><nobr>Мы неосознанно <img class="section-4__ellips" src="img/ellips-2.png" alt=""></nobr> считываем поведение<br>
+                своих родителей, что сильно влияет <br>
+                на дальнейшую нашу жизнь</h3>
+              <p class="section-4__paragraph">Основные аспекты личности закладываются до 3 лет</p>
+              <div class="section-4__info">
+                <h4 class="section-4__subtitle">Основные аспекты личности закладываются до 3 лет</h4>
+                <p>Многие стремятся к изменениям в жизни,но ограничивают<br>
+                  себя старыми убеждениями,  не позволяя себе мыслить <br>
+                  и действовать в новом ключе</p>
+                <span class="section-4__line"> </span>
+                <p>Каждый выступает в роли уникального персонажа,<br>
+                  формируя его характеристики собственными <br>
+                  решениями и поступками</p>
+              </div>
+            </div>
+            <img  class="section-4__ivan"  src="img/ivan (1).png" alt="">
+          </div>
+        </div>
+
+      </section>
+      <section class="section-5">
+        <div class="container">
+          <div class="section-3__wrapper">
+            <h2 class="section-5__title">к счастью,</h2>
+            <div class="coursor visible-hand">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" height="42" width="42">
+                <rect class="tooltip-horizontal-scroll-icon_card" x="480" width="200" height="200" rx="5" fill="rgba(190,190,190,0.3)"></rect>
+                <rect class="tooltip-horizontal-scroll-icon_card" y="0" width="200" height="200" rx="5" fill="rgba(190,190,190,0.3)"></rect>
+                <rect class="tooltip-horizontal-scroll-icon_card" x="240" width="200" height="200" rx="5" fill="rgba(190,190,190,0.3)"></rect>
+                <path class="tooltip-horizontal-scroll-icon_hand" d="M78.9579 285.7C78.9579 285.7 37.8579 212.5 20.5579 180.8C-2.44209 138.6 -6.2422 120.8 9.6579 112C19.5579 106.5 33.2579 108.8 41.6579 123.4L61.2579 154.6V32.3C61.2579 32.3 60.0579 0 83.0579 0C107.558 0 105.458 32.3 105.458 32.3V91.7C105.458 91.7 118.358 82.4 133.458 86.6C141.158 88.7 150.158 92.4 154.958 104.6C154.958 104.6 185.658 89.7 200.958 121.4C200.958 121.4 236.358 114.4 236.358 151.1C236.358 187.8 192.158 285.7 192.158 285.7H78.9579Z" fill="rgba(190,190,190,1)"></path>
+                <style>
+                  .tooltip-horizontal-scroll-icon_hand {
+                    animation: tooltip-horizontal-scroll-icon_anim-scroll-hand 2s infinite;
+                  }
+  
+                  .tooltip-horizontal-scroll-icon_card {
+                    animation: tooltip-horizontal-scroll-icon_anim-scroll-card 2s infinite;
+                  }
+  
+                  @keyframes tooltip-horizontal-scroll-icon_anim-scroll-hand {
+                    0% {
+                      transform: translateX(80px) scale(1);
+                      opacity: 0;
+                    }
+  
+                    10% {
+                      transform: translateX(80px) scale(1);
+                      opacity: 1;
+                    }
+  
+                    20%,
+                    60% {
+                      transform: translateX(175px) scale(0.6);
+                      opacity: 1;
+                    }
+  
+                    80% {
+                      transform: translateX(5px) scale(0.6);
+                      opacity: 1;
+                    }
+  
+                    to {
+                      transform: translateX(5px) scale(0.6);
+                      opacity: 0;
+                    }
+                  }
+  
+                  @keyframes tooltip-horizontal-scroll-icon_anim-scroll-card {
+  
+                    0%,
+                    60% {
+                      transform: translateX(0);
+                    }
+  
+                    80%,
+                    to {
+                      transform: translateX(-240px);
+                    }
+                  }
+                </style>
+              </svg>
+            </div>
+            <div class="section-3__columns">
+              <div class="section-2__column">
+                <div class="section-2__img">
+                  <img src="img/111.jpg" alt="">
+                </div>
+                <div>
+                  <p class="section-2__subtitle">детские травмы,</p>
+                </div>
+              </div>
+
+                <div class="section-2__column">
+                  <div class="section-2__img">
+                    <img src="img/222.jpg" alt="">
+                  </div>
+                  <div>
+                    <p class="section-2__subtitle">ошибки воспитания,</p>
+                  </div>
+                </div>
+
+                <div class="section-2__column">
+                  <div class="section-2__img">
+                    <img src="img/333.jpg" alt="">
+                  </div>
+                  <div>
+                    <p class="section-2__subtitle">всевозможные страхи</p>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="section-5__main">
+            <h3 class="section-5__title2"><nobr class="section-5__nobr">Это <b>–</b> не приговор</nobr></h3>
+            <p class="section-5__subtitle">Это – возможность «начать жизнь<br>
+              с чистого листа» Обычно – это тотальное<br>
+              перечеркивание прошлого</p>
+              <img class="section-5__bg" src="img/bgs4.jpg" alt="">
+          </div>
+        </div>
+      </section>
+      <section class="section-6" >
+        <div class="container section-6__container">
+          <h4 class="section-6__title">А что дальше?</h4>
+          <p class="section-6__subtitle">Можно оставить как есть и все вернется на круги своя или<br>
+            создать нового персонажа уже с новыми характеристиками</p>
+          <p class="section-6__subtitle2 section-6__title">пример:</p>
+          <div class="section-6__row">
+            <div class="section-6__exempl">
+              <img class="section-6__pensive" src="img/pensive-.png" alt="">
+              <ul class="section-6__ul">
+                <img class="section-6__img" src="img/Злая.png" alt="">
+                <li class="section-6__li"><i class="fa-solid fa-xmark"></i>Всем вокруг везет, мне никогда</li>
+                <li class="section-6__li"><i class="fa-solid fa-xmark"></i>Я всегда делаю ошибки, больше не буду пробовать</li>
+                <li class="section-6__li"><i class="fa-solid fa-xmark"></i>Меня не воспринимают всерьез, я не заметная…,<br> я страдаю от этого</li>
+                <li class="section-6__li"><i class="fa-solid fa-xmark"></i>Я не умею преподносить себя, краситься, одеваться</li>
+                <li class="section-6__li"><i class="fa-solid fa-xmark"></i>Да не нужны мне психологи и умные книжки,<br> я все сама/ сам</li>
+                <li class="section-6__li"><i class="fa-solid fa-xmark"></i>Боюсь быть отвергнутой</li>
+                <li class="section-6__li"><i class="fa-solid fa-xmark"></i>Переболею «на ногах», потеря чувствительности,<br> кто то управляет мной</li>
+                <li class="section-6__li"><i class="fa-solid fa-xmark"></i>Не знаю чего хочу</li>
+              </ul>
+            </div>
+            <div class="section-6__exempl2">
+              <img class="section-6__smile" src="img/smiling.png" alt="">
+              <ul class="section-6__ul">
+                <img class="section-6__img2" src="img/Радостная.png" alt="">
+                <li class="section-6__li"><i class="fa-solid fa-check"></i>Я заслуживаю успеха и уважения, быть успешным<br>
+                  это приятно, я хочу быть успешной сегодня</li>
+                <li class="section-6__li"><i class="fa-solid fa-check"></i>Каждая ошибка - шаг к моему успеху и росту</li>
+                <li class="section-6__li"><i class="fa-solid fa-check"></i>Моя уникальность делает меня особенной,<br>  мне важно выражаться сейчас</li>
+                <li class="section-6__li"><i class="fa-solid fa-check"></i>У меня всегда есть время для себя, я могу изучить<br>
+                  новое и добавить это в свою  жизнь уже сегодня</li>
+                <li class="section-6__li"><i class="fa-solid fa-check"></i>Рискуя, я открываю новые перспективы, все новое<br>
+                  это интерес, драйв и кайф </li>
+                <li class="section-6__li"><i class="fa-solid fa-check"></i>Ты можешь сам стать себе психологом, повышай<br>
+                  осознанность, самоанализ, используй эффективные<br>
+                  инструменты, управляй своей реальностью</li>
+                <li class="section-6__li"><i class="fa-solid fa-check"></i>Забота сначала о себе - это нормально. <br>
+                  Мои границы = моя безопасность и власть</li>
+                <li class="section-6__li"><i class="fa-solid fa-check"></i>Придумай себе цель, которая выходит за  рамки<br>
+                  твоей жизни и навсегда забудешь это чувство <br>
+                  – зачем тебе вставать по утрам</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-7">
+        <div class="container container-section__7">
+          <div class="section-7__title">
+            <h3>Как ему это удалось?</h3>
+            <p>5 дней и изменения готовы</p>
+          </div>
+          <div class="section-7__wrapper">
+            <div class="coursor visible-hand">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" height="42" width="42">
+                <rect class="tooltip-horizontal-scroll-icon_card" x="480" width="200" height="200" rx="5" fill="rgba(190,190,190,0.3)"></rect>
+                <rect class="tooltip-horizontal-scroll-icon_card" y="0" width="200" height="200" rx="5" fill="rgba(190,190,190,0.3)"></rect>
+                <rect class="tooltip-horizontal-scroll-icon_card" x="240" width="200" height="200" rx="5" fill="rgba(190,190,190,0.3)"></rect>
+                <path class="tooltip-horizontal-scroll-icon_hand" d="M78.9579 285.7C78.9579 285.7 37.8579 212.5 20.5579 180.8C-2.44209 138.6 -6.2422 120.8 9.6579 112C19.5579 106.5 33.2579 108.8 41.6579 123.4L61.2579 154.6V32.3C61.2579 32.3 60.0579 0 83.0579 0C107.558 0 105.458 32.3 105.458 32.3V91.7C105.458 91.7 118.358 82.4 133.458 86.6C141.158 88.7 150.158 92.4 154.958 104.6C154.958 104.6 185.658 89.7 200.958 121.4C200.958 121.4 236.358 114.4 236.358 151.1C236.358 187.8 192.158 285.7 192.158 285.7H78.9579Z" fill="rgba(190,190,190,1)"></path>
+                <style>
+                  .tooltip-horizontal-scroll-icon_hand {
+                    animation: tooltip-horizontal-scroll-icon_anim-scroll-hand 2s infinite;
+                  }
+  
+                  .tooltip-horizontal-scroll-icon_card {
+                    animation: tooltip-horizontal-scroll-icon_anim-scroll-card 2s infinite;
+                  }
+  
+                  @keyframes tooltip-horizontal-scroll-icon_anim-scroll-hand {
+                    0% {
+                      transform: translateX(80px) scale(1);
+                      opacity: 0;
+                    }
+  
+                    10% {
+                      transform: translateX(80px) scale(1);
+                      opacity: 1;
+                    }
+  
+                    20%,
+                    60% {
+                      transform: translateX(175px) scale(0.6);
+                      opacity: 1;
+                    }
+  
+                    80% {
+                      transform: translateX(5px) scale(0.6);
+                      opacity: 1;
+                    }
+  
+                    to {
+                      transform: translateX(5px) scale(0.6);
+                      opacity: 0;
+                    }
+                  }
+  
+                  @keyframes tooltip-horizontal-scroll-icon_anim-scroll-card {
+  
+                    0%,
+                    60% {
+                      transform: translateX(0);
+                    }
+  
+                    80%,
+                    to {
+                      transform: translateX(-240px);
+                    }
+                  }
+                </style>
+              </svg>
+            </div>
+            <div class="section-7__buttons">
+              <button class="item item1">1 день</button>
+              <button class="item item2">2 день</button>
+              <button class="item item3">3 день</button>
+              <button class="item item4">4 день</button>
+              <button class="item item5">5 день</button>
+          </div>
+          <div class="cards">
+              <div class="slide slide1 active">
+                <div class="top-bundle">
+                  <span class="slide-1__span transparent">Что делаем:</span>
+                  <p class="section-7__paragraph">Вступительный вебинар: расскажем все нюансы<br>
+                    как устроена психология, что повлияло на то,<br>
+                    что у вас творится сейчас</p>
+                  <p class="section-7__paragraph">создаем монолог «Причина Всего» по шаблону</p>
+                </div>
+                <div class="center-bundle">
+                  <span class="slide-1__span transparent">Что это даст?</span>
+                  <p class="section-7__paragraph">Подсвечиваем ваши боли, проблемы, страхи</p>
+                </div>
+                <div class="bottom-bundle">
+                  <span class="slide-1__span">Какой результат</span>
+                  <p class="section-7__paragraph">узнаете правила создания нового персонажа<br>
+                    (новой жизни) узнаете свои сильные стороны,<br>
+                    а так же, над какими слабыми сторона <br>
+                    надо работать</p>
+                </div>
+              </div>
+
+              <div class="slide slide2">
+                  <div class="top-bundle">
+                    <span class="slide-1__span transparent">Что делаем:</span>
+                    <p class="section-7__paragraph">составляем 6 целей в главных сферах жизни<br>
+                      такие как отношения, деньги, здоровье,<br>
+                      работа с монологом</p>
+                  </div>
+                  <div class="center-bundle">
+                    <span class="slide-1__span ">Какой результат</span>
+                    <p class="section-7__paragraph">Составление карты актуальных желаний<br>
+                      в каждой сфере жизни</p>
+                  </div>
+               
+              </div>
+
+              <div class="slide slide3">
+                <div class="top-bundle">
+                  <span class="slide-1__span transparent">Что делаем:</span>
+                  <p class="section-7__paragraph">проработка монолога «глобальная личность»</p>
+                </div>
+                <div class="center-bundle">
+                  <span class="slide-1__span ">Какой результат</span>
+                  <span class="slide-3__span section-7__paragraph "><p class="slide3__paragraph6 slide-3__before1">Сможете поставить цель за пределами жизни</p></span>
+                  <span class="slide-3__span section-7__paragraph"><p class="slide3__paragraph6 slide-3__before1">Появится четкое понимание куда двигаться</p></span>
+                  <span class="slide-3__span section-7__paragraph"><p class="slide3__paragraph6 slide-3__before1">Создание дополнительного смысла в жизни</p></span>
+                </div>
+              </div>
+
+              <div class="slide slide4"> 
+                <div class="top-bundle">
+                  <span class="slide-1__span transparent">Что делаем:</span>
+                  <p class="section-7__paragraph">Создание видеолетописи рода</p>
+                </div>
+                <div class="center-bundle">
+                  <span class="slide-1__span ">Какой результат</span>
+                  <p class="section-7__paragraph">Создадите первое видео<br>
+                    для своих будущих поколений</p>
+                </div>
+              </div>
+
+              <div class="slide slide5">           
+                <div class="top-bundle">
+                  <span class="slide-1__span transparent">Что делаем:</span>
+                  <span class="slide-3__span section-7__paragraph span-relative__1"><p class="slide3__paragraph6 slide-3__before1">Заключительный вебинар</p></span>
+                  <span class="slide-3__span section-7__paragraph span-relative__2"><p class="slide3__paragraph6 slide-3__before1">Бонусный монолог — личное<br>
+                    пространство (личные границы)</p></span>
+                </div>
+                <div class="center-bundle">
+                  <span class="slide-1__span ">Какой результат</span>
+                  <p class="section-7__paragraph">Позволить выстраивать взаимоотношения<br>
+                    выбранные вами (в любви гармонии и теплоте)</p>
+                </div>
+              </div>
+
+          </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__container container">
+        <div class="footer__leftside">
+          <a class="footer__logo" href="/">
+            <picture>
+              <source srcset="img/logo.webp" type="image/webp">
+              <img src="img/logo.png" alt="">
+            </picture>
+          </a>
+          <div>
+            <p class="footer__logo-text _section-subtitle">
+              Авторский 60-дневный <br>
+              тренинг Ивана Лободы
+            </p>
+          </div>
+        </div>
+        <div class="footer__middle">
+          <div class="footer__middle-left">
+            <div class="footer__start _text">
+              <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22">
+                <defs>
+                  <mask id="3wwfb" width="2" height="2" x="-1" y="-1">
+                    <path fill="#fff" d="M0 0h21v21H0z"></path>
+                    <path d="M20.571 2.498v.549c-.104.515-.197 1.032-.313 1.546-.364 1.604-.902 3.146-1.666 4.607-.183.35-.482.505-.85.45-.313-.047-.592-.302-.625-.637a1.17 1.17 0 0 1 .1-.541c.219-.52.46-1.032.698-1.546.054-.116.044-.194-.052-.29a1246.88 1246.88 0 0 1-3.497-3.49c-.072-.074-.13-.121-.25-.074-1.793.708-3.425 1.669-4.774 3.067C8.088 7.437 7.208 8.966 6.56 10.64c-.022.057.003.167.047.211 1.174 1.186 2.355 2.361 3.53 3.542.077.078.138.091.237.053 1.705-.675 3.266-1.58 4.58-2.875.25-.247.534-.352.87-.227.328.118.482.377.522.713.23 1.908-.116 3.703-1.056 5.384-.795 1.418-2.616 1.688-3.767.54a3699.994 3699.994 0 0 1-8.508-8.509c-1.14-1.143-.873-2.961.536-3.753 1.478-.832 3.063-1.213 4.757-1.113a.758.758 0 0 0 .604-.213c1.428-1.28 3.076-2.192 4.864-2.866A20.953 20.953 0 0 1 17.844.464c.038-.006.073-.024.11-.036h.585c.037.012.072.029.109.036.935.197 1.535.76 1.827 1.663.04.122.065.248.096.371zm-9.13 13.197c.404.404.783.787 1.167 1.165.434.427 1.038.348 1.317-.197.222-.433.418-.881.587-1.336.182-.493.272-1.011.313-1.576a15.708 15.708 0 0 1-3.385 1.944zm-4.207-9.5c-.032-.01-.044-.017-.055-.017a6.93 6.93 0 0 0-2.924.94c-.45.27-.515.86-.145 1.243.321.332.654.65.977.983.066.068.108.16.162.241.576-1.238 1.204-2.355 1.985-3.39zM18.08 2.008c-.27.046-.54.089-.805.146-.446.097-.889.206-1.328.31.872.87 1.724 1.726 2.609 2.61.15-.739.31-1.454.439-2.176.097-.542-.372-.986-.915-.89zM6.808 16.04c.18.912-.176 1.89-.974 2.36-.815.477-1.68.876-2.536 1.28-.586.278-1.196.504-1.796.752H1.19a.93.93 0 0 1-.625-.624v-.312c.443-1.025.875-2.055 1.337-3.07.2-.443.43-.88.706-1.28.568-.816 1.382-1.12 2.351-.948.94.164 1.664.911 1.849 1.842zm-1.535.311a.762.762 0 0 0-.623-.623.716.716 0 0 0-.799.358c-.364.673-.702 1.36-1.051 2.04l.074.075c.68-.348 1.367-.687 2.04-1.054a.715.715 0 0 0 .359-.796zm8.066-11.04a2.333 2.333 0 0 1 2.35 2.336 2.342 2.342 0 0 1-2.342 2.35 2.352 2.352 0 0 1-2.344-2.351 2.341 2.341 0 0 1 2.336-2.334zm.013 1.562a.783.783 0 0 0-.787.776.79.79 0 0 0 .78.786.78.78 0 0 0 .781-.779.774.774 0 0 0-.774-.783z"></path>
+                  </mask>
+                  <filter id="3wwfa" width="41" height="42" x="-10" y="-10" filterUnits="userSpaceOnUse">
+                    <feOffset dy="1" in="SourceGraphic" result="FeOffset1068Out"></feOffset>
+                    <feGaussianBlur in="FeOffset1068Out" result="FeGaussianBlur1069Out" stdDeviation="0 0"></feGaussianBlur>
+                  </filter>
+                </defs>
+                <g>
+                  <g>
+                    <g filter="url(#3wwfa)">
+                      <path fill="none" d="M20.571 2.498v.549c-.104.515-.197 1.032-.313 1.546-.364 1.604-.902 3.146-1.666 4.607-.183.35-.482.505-.85.45-.313-.047-.592-.302-.625-.637a1.17 1.17 0 0 1 .1-.541c.219-.52.46-1.032.698-1.546.054-.116.044-.194-.052-.29a1246.88 1246.88 0 0 1-3.497-3.49c-.072-.074-.13-.121-.25-.074-1.793.708-3.425 1.669-4.774 3.067C8.088 7.437 7.208 8.966 6.56 10.64c-.022.057.003.167.047.211 1.174 1.186 2.355 2.361 3.53 3.542.077.078.138.091.237.053 1.705-.675 3.266-1.58 4.58-2.875.25-.247.534-.352.87-.227.328.118.482.377.522.713.23 1.908-.116 3.703-1.056 5.384-.795 1.418-2.616 1.688-3.767.54a3699.994 3699.994 0 0 1-8.508-8.509c-1.14-1.143-.873-2.961.536-3.753 1.478-.832 3.063-1.213 4.757-1.113a.758.758 0 0 0 .604-.213c1.428-1.28 3.076-2.192 4.864-2.866A20.953 20.953 0 0 1 17.844.464c.038-.006.073-.024.11-.036h.585c.037.012.072.029.109.036.935.197 1.535.76 1.827 1.663.04.122.065.248.096.371zm-9.13 13.197c.404.404.783.787 1.167 1.165.434.427 1.038.348 1.317-.197.222-.433.418-.881.587-1.336.182-.493.272-1.011.313-1.576a15.708 15.708 0 0 1-3.385 1.944zm-4.207-9.5c-.032-.01-.044-.017-.055-.017a6.93 6.93 0 0 0-2.924.94c-.45.27-.515.86-.145 1.243.321.332.654.65.977.983.066.068.108.16.162.241.576-1.238 1.204-2.355 1.985-3.39zM18.08 2.008c-.27.046-.54.089-.805.146-.446.097-.889.206-1.328.31.872.87 1.724 1.726 2.609 2.61.15-.739.31-1.454.439-2.176.097-.542-.372-.986-.915-.89zM6.808 16.04c.18.912-.176 1.89-.974 2.36-.815.477-1.68.876-2.536 1.28-.586.278-1.196.504-1.796.752H1.19a.93.93 0 0 1-.625-.624v-.312c.443-1.025.875-2.055 1.337-3.07.2-.443.43-.88.706-1.28.568-.816 1.382-1.12 2.351-.948.94.164 1.664.911 1.849 1.842zm-1.535.311a.762.762 0 0 0-.623-.623.716.716 0 0 0-.799.358c-.364.673-.702 1.36-1.051 2.04l.074.075c.68-.348 1.367-.687 2.04-1.054a.715.715 0 0 0 .359-.796zm8.066-11.04a2.333 2.333 0 0 1 2.35 2.336 2.342 2.342 0 0 1-2.342 2.35 2.352 2.352 0 0 1-2.344-2.351 2.341 2.341 0 0 1 2.336-2.334zm.013 1.562a.783.783 0 0 0-.787.776.79.79 0 0 0 .78.786.78.78 0 0 0 .781-.779.774.774 0 0 0-.774-.783z" mask="url(&quot;#3wwfb&quot;)"></path>
+                      <path fill="#fff" fill-opacity=".5" d="M20.571 2.498v.549c-.104.515-.197 1.032-.313 1.546-.364 1.604-.902 3.146-1.666 4.607-.183.35-.482.505-.85.45-.313-.047-.592-.302-.625-.637a1.17 1.17 0 0 1 .1-.541c.219-.52.46-1.032.698-1.546.054-.116.044-.194-.052-.29a1246.88 1246.88 0 0 1-3.497-3.49c-.072-.074-.13-.121-.25-.074-1.793.708-3.425 1.669-4.774 3.067C8.088 7.437 7.208 8.966 6.56 10.64c-.022.057.003.167.047.211 1.174 1.186 2.355 2.361 3.53 3.542.077.078.138.091.237.053 1.705-.675 3.266-1.58 4.58-2.875.25-.247.534-.352.87-.227.328.118.482.377.522.713.23 1.908-.116 3.703-1.056 5.384-.795 1.418-2.616 1.688-3.767.54a3699.994 3699.994 0 0 1-8.508-8.509c-1.14-1.143-.873-2.961.536-3.753 1.478-.832 3.063-1.213 4.757-1.113a.758.758 0 0 0 .604-.213c1.428-1.28 3.076-2.192 4.864-2.866A20.953 20.953 0 0 1 17.844.464c.038-.006.073-.024.11-.036h.585c.037.012.072.029.109.036.935.197 1.535.76 1.827 1.663.04.122.065.248.096.371zm-9.13 13.197c.404.404.783.787 1.167 1.165.434.427 1.038.348 1.317-.197.222-.433.418-.881.587-1.336.182-.493.272-1.011.313-1.576a15.708 15.708 0 0 1-3.385 1.944zm-4.207-9.5c-.032-.01-.044-.017-.055-.017a6.93 6.93 0 0 0-2.924.94c-.45.27-.515.86-.145 1.243.321.332.654.65.977.983.066.068.108.16.162.241.576-1.238 1.204-2.355 1.985-3.39zM18.08 2.008c-.27.046-.54.089-.805.146-.446.097-.889.206-1.328.31.872.87 1.724 1.726 2.609 2.61.15-.739.31-1.454.439-2.176.097-.542-.372-.986-.915-.89zM6.808 16.04c.18.912-.176 1.89-.974 2.36-.815.477-1.68.876-2.536 1.28-.586.278-1.196.504-1.796.752H1.19a.93.93 0 0 1-.625-.624v-.312c.443-1.025.875-2.055 1.337-3.07.2-.443.43-.88.706-1.28.568-.816 1.382-1.12 2.351-.948.94.164 1.664.911 1.849 1.842zm-1.535.311a.762.762 0 0 0-.623-.623.716.716 0 0 0-.799.358c-.364.673-.702 1.36-1.051 2.04l.074.075c.68-.348 1.367-.687 2.04-1.054a.715.715 0 0 0 .359-.796zm8.066-11.04a2.333 2.333 0 0 1 2.35 2.336 2.342 2.342 0 0 1-2.342 2.35 2.352 2.352 0 0 1-2.344-2.351 2.341 2.341 0 0 1 2.336-2.334zm.013 1.562a.783.783 0 0 0-.787.776.79.79 0 0 0 .78.786.78.78 0 0 0 .781-.779.774.774 0 0 0-.774-.783z"></path>
+                    </g>
+                    <path fill="#0d0d0d" d="M20.571 2.498v.549c-.104.515-.197 1.032-.313 1.546-.364 1.604-.902 3.146-1.666 4.607-.183.35-.482.505-.85.45-.313-.047-.592-.302-.625-.637a1.17 1.17 0 0 1 .1-.541c.219-.52.46-1.032.698-1.546.054-.116.044-.194-.052-.29a1246.88 1246.88 0 0 1-3.497-3.49c-.072-.074-.13-.121-.25-.074-1.793.708-3.425 1.669-4.774 3.067C8.088 7.437 7.208 8.966 6.56 10.64c-.022.057.003.167.047.211 1.174 1.186 2.355 2.361 3.53 3.542.077.078.138.091.237.053 1.705-.675 3.266-1.58 4.58-2.875.25-.247.534-.352.87-.227.328.118.482.377.522.713.23 1.908-.116 3.703-1.056 5.384-.795 1.418-2.616 1.688-3.767.54a3699.994 3699.994 0 0 1-8.508-8.509c-1.14-1.143-.873-2.961.536-3.753 1.478-.832 3.063-1.213 4.757-1.113a.758.758 0 0 0 .604-.213c1.428-1.28 3.076-2.192 4.864-2.866A20.953 20.953 0 0 1 17.844.464c.038-.006.073-.024.11-.036h.585c.037.012.072.029.109.036.935.197 1.535.76 1.827 1.663.04.122.065.248.096.371zm-9.13 13.197c.404.404.783.787 1.167 1.165.434.427 1.038.348 1.317-.197.222-.433.418-.881.587-1.336.182-.493.272-1.011.313-1.576a15.708 15.708 0 0 1-3.385 1.944zm-4.207-9.5c-.032-.01-.044-.017-.055-.017a6.93 6.93 0 0 0-2.924.94c-.45.27-.515.86-.145 1.243.321.332.654.65.977.983.066.068.108.16.162.241.576-1.238 1.204-2.355 1.985-3.39zM18.08 2.008c-.27.046-.54.089-.805.146-.446.097-.889.206-1.328.31.872.87 1.724 1.726 2.609 2.61.15-.739.31-1.454.439-2.176.097-.542-.372-.986-.915-.89zM6.808 16.04c.18.912-.176 1.89-.974 2.36-.815.477-1.68.876-2.536 1.28-.586.278-1.196.504-1.796.752H1.19a.93.93 0 0 1-.625-.624v-.312c.443-1.025.875-2.055 1.337-3.07.2-.443.43-.88.706-1.28.568-.816 1.382-1.12 2.351-.948.94.164 1.664.911 1.849 1.842zm-1.535.311a.762.762 0 0 0-.623-.623.716.716 0 0 0-.799.358c-.364.673-.702 1.36-1.051 2.04l.074.075c.68-.348 1.367-.687 2.04-1.054a.715.715 0 0 0 .359-.796zm8.066-11.04a2.333 2.333 0 0 1 2.35 2.336 2.342 2.342 0 0 1-2.342 2.35 2.352 2.352 0 0 1-2.344-2.351 2.341 2.341 0 0 1 2.336-2.334zm.013 1.562a.783.783 0 0 0-.787.776.79.79 0 0 0 .78.786.78.78 0 0 0 .781-.779.774.774 0 0 0-.774-.783z"></path>
+                  </g>
+                </g>
+              </svg>
+              Старт потока: 1 мая
+							 <!--20 мая
+-->
+            </div>
+            <a class="footer__policy" target="_blank" href="documents/Политика.pdf">
+              Политика в отношении обработки персональных данных
+            </a>
+            <a class="footer__policy" target="_blank" href="documents/Согласие.pdf">
+              Согласие на обработку персональных данных
+              </a>
+              <a class="footer__policy" target="_blank" href="documents/Согласие на рассылки.pdf">
+                Согласие на получение рекламной рассылки
+              </a>
+              <a class="footer__policy" target="_blank" href="documents/Оферта.pdf">
+                Оферта
+                </a>
+          </div>
+        </div>
+        <div class="footer__rightside">
+          <button class="footer__button" data-bs-toggle="modal" data-bs-target="#callback">
+            Перезвоните мне
+          </button>
+          <div class="footer__creator">
+            <a href="https://t-f-a.agency/lp" target="_blank" class="footer__creator-link">
+              <picture>
+                <source srcset="img/footer-tfa.webp" type="image/webp">
+                <img src="img/tfa.png" alt="">
+              </picture>
+              <div class="footer__creator-text">
+                <span>Разработка</span> <br>
+                <span>сайта</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        Индивидуальный Предприниматель Власенко Алексей Викторович 
+  ИНН 540363985921 <br>
+  ОГРНИП 316547600114949, зарегистрирован в качестве индивидуального предпринимателя 19.05.2016 
+  Межрайонной инспекцией Федеральной налоговой службы № 16 по Новосибирской 
+  области <br>
+  sibtorgcom@gmail.com
+  </div>
+    </footer>
+  </div>
+  <div class="modal-2 fade main-modal show" id="question" tabindex="-1" aria-labelledby="mainLabel" style="display: none;" aria-modal="true" role="dialog">
+    <div class="main-modal__dialog modal-dialog modal-dialog-centered modal-dialog-centered1" role="document">
+      <div class="main-modal__content modal-content">
+        <button type="button" class="close-2 closse" data-bs-dismiss="modal" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16">
+            <g>
+              <g>
+                <path fill="#fff" d="M2.688 15.724l-2.12-2.12 5.81-5.81-5.81-5.812 2.12-2.12 5.811 5.81 5.81-5.81 2.122 2.12-5.812 5.812 5.81 5.808-2.12 2.121-5.81-5.81z"></path>
+              </g>
+            </g>
+          </svg>
+        </button>
+        <div class="main-modal__body2 modal-body">
+          <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script id="5b80506cc5c8395a100ddf787fe41ac02b36c424" src="https://pererozhdeniye.getcourse.ru/pl/lite/widget/script?id=939415"></script>
+
+
+
+
+<form
+	id="ltForm9794225"
+	class="
+		lt-normal-form
+		lt-form-inner
+		lt-form
+							"
+	action="https://pererozhdeniye.getcourse.ru/pl/lite/block-public/process-html?id=1784568533"
+	method="post"
+	data-open-new-window="0"
+	><input type="hidden" name="formParams[setted_offer_id]" ><br>
+<input id="input-formPosition9055035" name='formParams[need_offer]' type='hidden' value="" /><br>
+<input
+												
+				data-price-value=""
+				data-old-price-value=""
+				data-price-currency="руб."
+				data-qty-value=""
+				data-decimal-separator="."
+				data-thousands-separator=" "
+								id="input-formPosition9055035"
+				name='formParams[offer_id][]'
+				type='radio'  value="" 			><br>
+<input type="text" maxlength="60"  placeholder="Введите ваше имя" name="formParams[full_name]" value=""><br>
+<input type="text" maxlength="60"  placeholder="Введите ваш эл. адрес" name="formParams[email]" value="" ><br>
+<input type="text" maxlength="60"  placeholder="Введите ваш телефон" name="formParams[phone]" value=""><br>
+<button type="submit"
+		id="button4816449" 		
+		style="color: ; background-color: ; " onclick="if(window['btnprs6623aab874aa4']){return false;}window['btnprs6623aab874aa4']=true;setTimeout(function(){window['btnprs6623aab874aa4']=false},6000);return true;">
+	Записаться</button><br>
+<input type="hidden" id="9394156623aab86c04f" name="__gc__internal__form__helper" class="__gc__internal__form__helper" value="">
+<input type="hidden" id="9394156623aab86c04fref" name="__gc__internal__form__helper_ref" class="__gc__internal__form__helper_ref" value="">
+<input type="hidden" name="requestTime" value="1713613496">
+<input type="hidden" name="requestSimpleSign" value="972363039f16057a4000d8a8a1b30da3">
+<input type="hidden" name="isHtmlWidget" value="1"/></form><span id="gccounterImgContainer"></span><script>
+	window.addEventListener('load', function(){
+		let loc = document.getElementById("9394156623aab86c04f");
+		loc.value = window.location.href;
+		let ref = document.getElementById("9394156623aab86c04fref");
+		ref.value = document.referrer;
+
+		let statUrl = "https://pererozhdeniye.getcourse.ru/stat/counter?ref=" + encodeURIComponent(document.referrer)
+			+ "&loc=" + encodeURIComponent(document.location.href);
+		document.getElementById('gccounterImgContainer').innerHTML
+			= "<img width=1 height=1 style='display:none' id='gccounterImg' src='" + statUrl + "'/>";
+	});
+</script>
+
+
+</body>
+</html>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-1 fade main-modal show" id="question" tabindex="-1" aria-labelledby="mainLabel" style="display: none;" aria-modal="true" role="dialog">
+    <div class="main-modal__dialog modal-dialog modal-dialog-centered" role="document">
+      <div class="main-modal__content modal-content">
+        <button type="button" class="close-1 closse" data-bs-dismiss="modal" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16">
+            <g>
+              <g>
+                <path fill="#fff" d="M2.688 15.724l-2.12-2.12 5.81-5.81-5.81-5.812 2.12-2.12 5.811 5.81 5.81-5.81 2.122 2.12-5.812 5.812 5.81 5.808-2.12 2.121-5.81-5.81z"></path>
+              </g>
+            </g>
+          </svg>
+        </button>
+        <div class="main-modal__body modal-body">
+          <div class="main-modal__leftside">
+            <h2 class="main-modal__title _section-title">
+              <nobr>Остались вопросы<img src="img/ellipse.png" alt="" class="_ellipse main-modal__ellipse"></nobr>
+              <br>
+              или хотите попасть <br>
+              в следующий поток <br>
+              на лучших условиях?
+            </h2>
+            <h3 class="main-modal__subtitle _section-subtitle">
+              Заполните форму и мы <br>
+              с вами свяжемся
+            </h3>
+            <div class="main-modal__loboda">
+              <div class="main-modal__loboda-photo">
+                <picture>
+                  <source srcset="img/modal-loboda.webp" type="image/webp">
+                  <img src="img/modal-loboda.png" alt="">
+                </picture>
+              </div>
+              <div class="main-modal__loboda-text">
+                <p class="main-modal__loboda-name _main-text">Иван Лобода</p>
+                <div class="main-modal__loboda-proffession _text">
+                  автор и методолог <br>
+                  тренинга
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main-modal__rightside">
+            <h2 class="main-modal__title _section-title main-modal__title-mob">
+              <nobr>Остались вопросы<img src="img/ellipse.png" alt="" class="_ellipse main-modal__ellipse"></nobr>
+              <br>
+            </h2>
+            <form class="main-modal__capture-form capture-form" method="POST" action="#" enctype="multipart/form-data">
+              <input type="text" name="invisible" class="invisible" value="">
+              <input type="hidden" name="from" value="У меня есть вопросы, свяжитесь со мной">
+              <h4 class="capture-form__title">
+                Введите ваши <br>
+                данные в форме ниже
+              </h4>
+              <label for="name3" class="capture-form__label">
+                Ваше имя:
+              </label>
+              <input type="text" class="_form-control capture-form__phone" name="name" id="name3" placeholder="Иван Иванов" required="">
+              <label for="phone3" class="capture-form__label">
+                Контактный телефон:
+              </label>
+              <input type="tel" class="_form-control capture-form__phone" name="phone" id="phone3" placeholder="+7 (_ _ _) _ _ _ - _ _ - _ _" required="">
+              <label for="email2" class="capture-form__label">
+                Ваш e-mail:
+              </label>
+              <input type="email" class="_form-control capture-form__email" name="email" id="email2" placeholder="mail@mail.ru" required="">
+              <div class="capture-form__policy policy">
+              <input type="checkbox" class="policy__checkbox" required="" id="exampleCheck173">
+              <label class="policy__label" for="exampleCheck173">Проставляя отметку в данном поле, я даю свое <a target="_blank" href="documents/Согласие на рассылки.pdf" class="policy__link">согласие</a>
+            на получение информационных и рекламных рассылок  </label>
+            </div>
+						<button class="_main-btn capture-form__button" type="submit">
+                У меня есть вопросы, <nobr>свяжитесь со мной</nobr>
+              </button>
+							<p class="capture-form__text">Нажимая  «У меня есть вопросы, свяжитесь со мной», я даю свое <a target="_blank" href="documents/Согласие.pdf" class="policy__link">согласие</a> на обработку моих персональных данных, соглашаюсь с   <a target="_blank" href="documents/Политика.pdf" class="policy__link">политикой</a> в отношении персональных данных, а также соглашаюсь и присоединяюсь к <a target="_blank" href="documents/Оферта.pdf" class="policy__link">Оферте</a></p>
+              <!--<div class="capture-form__policy policy">
+                <input type="checkbox" class="policy__checkbox" required=""  id="exampleCheck2" />
+                <label class="policy__label" for="exampleCheck2">Я принимаю условия
+                  <a target="_blank" href="2) Политика_Власенко А.В._ред.28.03.2024.pdf" class="policy__link">политики конфиденциальности</a></label>
+              </div>-->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade callback-modal show" id="callback" tabindex="-1" aria-labelledby="callbackLabel" style="display: none;" aria-modal="true" role="dialog">
+    <div class="callback-modal__dialog modal-dialog modal-dialog-centered" role="document">
+      <div class="callback-modal__content modal-content">
+        <button type="button" class="close closse" data-bs-dismiss="modal" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16">
+            <g>
+              <g>
+                <path fill="#fff" d="M2.688 15.724l-2.12-2.12 5.81-5.81-5.81-5.812 2.12-2.12 5.811 5.81 5.81-5.81 2.122 2.12-5.812 5.812 5.81 5.808-2.12 2.121-5.81-5.81z"></path>
+              </g>
+            </g>
+          </svg>
+        </button>
+        <div class="callback-modal__body modal-body">
+          <div class="callback-modal__container">
+            <div class="capture-form">
+              <div class="capture-form__block">
+                <h2 class="capture-form__title">
+                  Введите ваши <br>
+                  данные в форме ниже
+                </h2>
+                <h3 class="capture-form__subtitle">
+                  и наш менеджер свяжется <br>
+                  с вами в ближайшее время
+                </h3>
+                <form class="capture-form__form" method="POST" action="#" enctype="multipart/form-data">
+                  <input type="text" name="invisible" class="invisible" value="">
+                  <input type="hidden" name="from" value="Заказать обратный звонок">
+                  <div class="capture-form__inner">
+                  <label for="name" class="capture-form__label">
+                      Ваше имя:
+                    </label>
+                    <input type="text" class="_form-control capture-form__phone" name="name" id="name11" placeholder="Иван Иванов" required="">
+                    <label for="phone1" class="capture-form__label">
+                      Контактный телефон:
+                    </label>
+                    <input type="tel" class="_form-control capture-form__phone" name="phone" id="phone1" placeholder="+7 (_ _ _) _ _ _ - _ _ - _ _" required="">
+                    <div class="capture-form__policy policy">
+              <input type="checkbox" class="policy__checkbox" required="" id="exampleCheck172">
+              <label class="policy__label" for="exampleCheck172">Проставляя отметку в данном поле, я даю свое <a target="_blank" href="documents/Согласие на рассылки.pdf" class="policy__link">согласие</a>
+            на получение информационных и рекламных рассылок  </label>
+            </div>
+						<button class="_main-btn capture-form__button" type="submit">
+                      Заказать обратный звонок
+                    </button>
+										<p class="capture-form__text">Нажимая  «Заказать звонок», я даю свое <a target="_blank" href="documents/Согласие.pdf" class="policy__link">согласие</a> на обработку моих персональных данных, соглашаюсь с   <a target="_blank" href="documents/Политика.pdf" class="policy__link">политикой</a> в отношении персональных данных, а также соглашаюсь и присоединяюсь к <a target="_blank" href="documents/Оферта.pdf" class="policy__link">Оферте</a></p>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+  <script src="https://kit.fontawesome.com/40a0a9ba5d.js" crossorigin="anonymous"></script>
+</body>
+</html>
